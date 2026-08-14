@@ -353,6 +353,12 @@ export class EquiposService {
     await unlink(ruta).catch(() => undefined);
   }
 
+  // Permite borrar explícitamente una imagen del disco cuando el usuario quita o reemplaza la foto
+  async eliminarImagenDisco(url?: string | null, thumbUrl?: string | null) {
+    if (url) await this.eliminarArchivoLocal(url);
+    if (thumbUrl) await this.eliminarArchivoLocal(thumbUrl);
+  }
+
   // ---- PROCESAR IMAGEN PRINCIPAL (estilo Mercado Libre: una foto maestra -> WebP + miniatura) ----
   async procesarImagen(file: Express.Multer.File) {
     if (!file) throw new BadRequestException('No se recibió ningún archivo');

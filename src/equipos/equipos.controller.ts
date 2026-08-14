@@ -139,6 +139,17 @@ export class EquiposController {
     return this.equiposService.procesarImagen(file);
   }
 
+  @Delete('imagen')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(...ROLES_EDITORES)
+  async eliminarImagen(
+    @Query('url') url?: string,
+    @Query('thumbUrl') thumbUrl?: string,
+  ) {
+    await this.equiposService.eliminarImagenDisco(url, thumbUrl);
+    return { ok: true };
+  }
+
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(...ROLES_EDITORES)
