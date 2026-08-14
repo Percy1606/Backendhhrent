@@ -46,7 +46,7 @@ export class EquiposService {
     return `${prefijo}${String(numero).padStart(3, '0')}`;
   }
 
-  // ---- PÚBLICO: catálogo (solo equipos disponibles, paginado) ----
+  // ---- PÚBLICO: catálogo (solo equipos principales/padre, con sus variantes y paginado) ----
   async findAllPublic(
     tipo?: string,
     busqueda?: string,
@@ -57,6 +57,7 @@ export class EquiposService {
   ) {
     const where: Prisma.EquipoWhereInput = {
       estado: 'DISPONIBLE',
+      padreId: null, // Solo muestra los productos principales en el catálogo público
     };
 
     if (destacado && (destacado === 'true' || destacado === '1')) {
@@ -92,7 +93,14 @@ export class EquiposService {
       this.prisma.equipo.count({ where }),
       this.prisma.equipo.findMany({
         where,
-        include: { familia: true, subfamilia: true },
+        include: {
+          familia: true,
+          subfamilia: true,
+          variantes: {
+            where: { estado: 'DISPONIBLE' },
+            orderBy: { precio: 'asc' },
+          },
+        },
         orderBy: { createdAt: 'desc' },
         skip: (pageActual - 1) * tamPagina,
         take: tamPagina,
@@ -111,7 +119,7 @@ export class EquiposService {
   // ---- PÚBLICO: categorías únicas para el filtro del catálogo ----
   async listarCategorias() {
     const categorias = await this.prisma.equipo.findMany({
-      where: { estado: 'DISPONIBLE' },
+      where: { estado: 'DISPONIBLE', padreId: null },
       select: { categoria: true },
       distinct: ['categoria'],
       orderBy: { categoria: 'asc' },
@@ -126,6 +134,11 @@ export class EquiposService {
         familia: true,
         subfamilia: true,
         documentos: true,
+        padre: true,
+        variantes: {
+          where: { estado: 'DISPONIBLE' },
+          orderBy: { precio: 'asc' },
+        },
       },
     });
     if (!equipo) throw new NotFoundException('Equipo no encontrado');
@@ -235,6 +248,8 @@ export class EquiposService {
         disponible: estado === 'DISPONIBLE',
         destacado: dto.destacado ?? false,
         observaciones: dto.observaciones || null,
+        padreId: dto.padreId || null,
+        varianteNombre: dto.varianteNombre || null,
       },
     });
 
@@ -319,6 +334,11 @@ export class EquiposService {
           dto.observaciones !== undefined
             ? dto.observaciones
             : existente.observaciones,
+        padreId: dto.padreId !== undefined ? dto.padreId : existente.padreId,
+        varianteNombre:
+          dto.varianteNombre !== undefined
+            ? dto.varianteNombre
+            : existente.varianteNombre,
       },
     });
 

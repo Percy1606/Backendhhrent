@@ -22,6 +22,8 @@ export class CrearEquipoDto {
   imagenThumbUrl?: string;
   destacado?: boolean;
   observaciones?: string;
+  padreId?: string;
+  varianteNombre?: string;
 }
 
 export class CambiarEstadoDto {

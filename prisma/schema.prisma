@@ -150,6 +150,12 @@ model Equipo {
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
 
+  // Variantes de Producto (Modelo Padre - Hijo)
+  padreId         String?
+  padre           Equipo?          @relation("EquipoVariantes", fields: [padreId], references: [id], onDelete: Cascade)
+  variantes       Equipo[]         @relation("EquipoVariantes")
+  varianteNombre  String?
+
   documentos    DocumentoEquipo[]
   historial     HistorialEquipo[]
   CotizacionItem CotizacionItem[]
