@@ -16,7 +16,8 @@ async function bootstrap() {
     prefix: '/uploads/',
   });
 
-  await app.listen(4000);
-  console.log('🚀 Backend NestJS escuchando en http://localhost:4000');
+  const port = process.env.PORT || 4001;
+  await app.listen(port);
+  console.log(`🚀 Backend NestJS escuchando en http://localhost:${port}`);
 }
 bootstrap();
