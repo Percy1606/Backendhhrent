@@ -128,20 +128,39 @@ export class EquiposService {
   }
 
   async findOnePublic(id: string) {
-    const equipo = await this.prisma.equipo.findUnique({
+    let equipo = await this.prisma.equipo.findUnique({
       where: { id },
       include: {
         familia: true,
         subfamilia: true,
         documentos: true,
-        padre: true,
+        padre: {
+          include: {
+            variantes: {
+              where: { estado: 'DISPONIBLE' },
+              orderBy: { precio: 'asc' },
+            },
+          },
+        },
         variantes: {
           where: { estado: 'DISPONIBLE' },
           orderBy: { precio: 'asc' },
         },
       },
     });
+
     if (!equipo) throw new NotFoundException('Equipo no encontrado');
+
+    // Si el usuario ingresa directamente al ID de una variante/hijo,
+    // devolvemos la estructura con su Padre y todas sus variantes hermanas
+    if (equipo.padreId && equipo.padre) {
+      const padreOriginal = equipo.padre;
+      return {
+        ...padreOriginal,
+        varianteInicialId: equipo.id,
+      };
+    }
+
     return equipo;
   }
 
