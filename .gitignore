@@ -1,0 +1,19 @@
+# Dependencias
+/node_modules
+
+# Build
+/dist
+
+# Archivos subidos (fotos de equipos, documentos) - NUNCA subir a git
+/uploads
+
+# Variables de entorno (secretos)
+.env*
+
+# Tests y logs
+/coverage
+*.log
+
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
