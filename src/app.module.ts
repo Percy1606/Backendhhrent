@@ -12,6 +12,7 @@ import { MantenimientoModule } from './mantenimiento/mantenimiento.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CotizacionesModule } from './cotizaciones/cotizaciones.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { ComprobantesModule } from './comprobantes/comprobantes.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { UsuariosModule } from './usuarios/usuarios.module';
     DashboardModule,
     CotizacionesModule,
     UsuariosModule,
+    ComprobantesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

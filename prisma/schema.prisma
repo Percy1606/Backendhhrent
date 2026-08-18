@@ -270,6 +270,46 @@ model ContratoAlquiler {
   items        ContratoItem[]
   inspecciones Inspeccion[]
   cotizacion   Cotizacion?
+  comprobantes Comprobante[]
+}
+
+enum TipoComprobante {
+  FACTURA
+  BOLETA
+  NOTA_CREDITO
+  NOTA_DEBITO
+}
+
+enum EstadoComprobante {
+  BORRADOR
+  EMITIDO
+  ACEPTADO
+  ANULADO
+  RECHAZADO
+}
+
+model Comprobante {
+  id               String            @id @default(uuid())
+  tipo             TipoComprobante   @default(FACTURA)
+  serie            String            @default("F001")
+  numero           Int               @default(1)
+  clienteTipoDoc   String            @default("6") // 6: RUC, 1: DNI
+  clienteNumDoc    String
+  clienteRazon     String
+  clienteDireccion String?
+  clienteEmail     String?
+  montoSubtotal    Decimal           @db.Decimal(12, 2)
+  montoIgv         Decimal           @db.Decimal(12, 2)
+  montoTotal       Decimal           @db.Decimal(12, 2)
+  moneda           String            @default("PEN") // PEN o USD
+  estado           EstadoComprobante @default(ACEPTADO)
+  pdfUrl           String?           @db.Text
+  xmlUrl           String?           @db.Text
+  observacion      String?           @db.Text
+  contratoId       String?
+  contrato         ContratoAlquiler? @relation(fields: [contratoId], references: [id], onDelete: SetNull)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
 }
 
 model ContratoItem {
