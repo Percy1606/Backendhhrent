@@ -101,7 +101,10 @@ export class EquiposService {
             orderBy: { precio: 'asc' },
           },
         },
-        orderBy: { createdAt: 'desc' },
+        orderBy: [
+          { destacado: 'desc' },
+          { createdAt: 'desc' }
+        ],
         skip: (pageActual - 1) * tamPagina,
         take: tamPagina,
       }),
