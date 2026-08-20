@@ -51,10 +51,12 @@ export interface CotizacionDetalle {
   mensaje: string | null;
   totalEstimado: number | null;
   estado: string;
+  proformaConfig?: any;
   createdAt: Date;
   items: {
     id: string;
     cantidad: number;
+    precioUnitario?: number | null;
     equipo: {
       id: string;
       codigoInterno: string | null;
@@ -63,6 +65,8 @@ export interface CotizacionDetalle {
       imagenUrl: string;
       tipo: string;
       marca: string | null;
+      modelo: string | null;
+      unidad: string | null;
     };
   }[];
   contrato: { id: string; numero: string } | null;
@@ -87,10 +91,12 @@ export class CotizacionesService {
       mensaje: c.mensaje,
       totalEstimado: c.totalEstimado != null ? Number(c.totalEstimado) : null,
       estado: c.estado,
+      proformaConfig: c.proformaConfig,
       createdAt: c.createdAt,
       items: c.items.map((i) => ({
         id: i.id,
         cantidad: i.cantidad,
+        precioUnitario: i.precioUnitario != null ? Number(i.precioUnitario) : null,
         equipo: {
           ...i.equipo,
           precio: i.equipo.precio != null ? Number(i.equipo.precio) : null,
@@ -254,15 +260,52 @@ export class CotizacionesService {
       }),
       estado: mapData.estado,
       montoTotal: mapData.totalEstimado,
+      proformaConfig: mapData.proformaConfig,
       datosAlquiler,
       items: mapData.items.map((i) => ({
+        id: i.id,
         nombre: i.equipo.nombre,
         cantidad: i.cantidad,
         tipo: i.equipo.tipo,
         imagenUrl: i.equipo.imagenUrl,
-        precio: i.equipo.precio,
+        precio: i.precioUnitario ?? i.equipo.precio,
       })),
     };
+  }
+
+  async valorizar(id: string, dto: { config: any, precios: Record<string, number> }) {
+    let subtotal = 0;
+    
+    // Guardar precios unitarios
+    for (const [itemId, precio] of Object.entries(dto.precios)) {
+      const item = await this.prisma.cotizacionItem.findUnique({ where: { id: itemId } });
+      if (item && item.cotizacionId === id) {
+        await this.prisma.cotizacionItem.update({
+          where: { id: itemId },
+          data: { precioUnitario: new Prisma.Decimal(precio) }
+        });
+        subtotal += precio * item.cantidad;
+      }
+    }
+
+    const descuento = Number(dto.config.descuento) || 0;
+    const flete = Number(dto.config.flete) || 0;
+    const embalaje = Number(dto.config.embalaje) || 0;
+    const igvPercent = Number(dto.config.igvPercent) || 0;
+    const totalNeto = subtotal - descuento;
+    const igv = totalNeto * (igvPercent / 100);
+    const granTotal = totalNeto + igv + flete + embalaje;
+
+    const cotizacion = await this.prisma.cotizacion.update({
+      where: { id },
+      data: {
+        estado: 'COTIZADA',
+        proformaConfig: dto.config,
+        totalEstimado: new Prisma.Decimal(granTotal),
+      },
+      include: INCLUDE_ITEMS,
+    });
+    return this.mapear(cotizacion);
   }
 
   // ---- ADMIN: listado ----

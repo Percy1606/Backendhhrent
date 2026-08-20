@@ -47,6 +47,14 @@ export class CotizacionesController {
     return this.cotizacionesService.track(ticket);
   }
 
+  // ADMIN — Guardar valores de proforma y cotizar
+  @Post(':id/valorizar')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(...ROLES_LECTURA)
+  valorizar(@Param('id') id: string, @Body() dto: any) {
+    return this.cotizacionesService.valorizar(id, dto);
+  }
+
   @Get()
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(...ROLES_LECTURA)

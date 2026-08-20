@@ -35,3 +35,8 @@ export class ConvertirCotizacionDto {
   condiciones?: string;
   observaciones?: string;
 }
+
+export class ValorizarCotizacionDto {
+  config: any;
+  precios: Record<string, number>;
+}

@@ -232,7 +232,8 @@ model Cotizacion {
   clienteTelefono String
   mensaje         String?          @db.Text
   totalEstimado   Decimal?         @db.Decimal(10, 2)
-  estado          String           @default("PENDIENTE") // PENDIENTE, ENVIADA, APROBADA, CONTRATO, RECHAZADA
+  estado          String           @default("PENDIENTE") // PENDIENTE, COTIZADA, APROBADA, CONTRATO, RECHAZADA
+  proformaConfig  Json?            // Guarda la configuración del PDF (precios extra, flete, igv, etc)
   contratoId      String?          @unique // Contrato de alquiler generado desde la cotización aprobada
   contrato        ContratoAlquiler? @relation(fields: [contratoId], references: [id], onDelete: SetNull)
   createdAt       DateTime         @default(now())
@@ -241,13 +242,14 @@ model Cotizacion {
 }
 
 model CotizacionItem {
-  id           String     @id @default(uuid())
-  cotizacionId String
-  equipoId     String
-  cantidad     Int        @default(1)
+  id             String     @id @default(uuid())
+  cotizacionId   String
+  equipoId       String
+  cantidad       Int        @default(1)
+  precioUnitario Decimal?   @db.Decimal(10, 2) // Precio asignado por el admin en la proforma
   
-  cotizacion   Cotizacion @relation(fields: [cotizacionId], references: [id], onDelete: Cascade)
-  equipo       Equipo     @relation(fields: [equipoId], references: [id])
+  cotizacion     Cotizacion @relation(fields: [cotizacionId], references: [id], onDelete: Cascade)
+  equipo         Equipo     @relation(fields: [equipoId], references: [id])
 }
 
 model ContratoAlquiler {
