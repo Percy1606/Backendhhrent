@@ -151,6 +151,24 @@ export class EquiposService {
 
     if (!equipo) throw new NotFoundException('Equipo no encontrado');
 
+    if (equipo.variantes) {
+      equipo.variantes = equipo.variantes.map(v => {
+        if (!v.imagenUrl || v.imagenUrl.trim() === '') {
+          v.imagenUrl = equipo!.imagenUrl;
+        }
+        return v;
+      });
+    }
+
+    if (equipo.padre && equipo.padre.variantes) {
+      equipo.padre.variantes = equipo.padre.variantes.map(v => {
+        if (!v.imagenUrl || v.imagenUrl.trim() === '') {
+          v.imagenUrl = equipo!.padre!.imagenUrl;
+        }
+        return v;
+      });
+    }
+
     // Si el usuario ingresa directamente al ID de una variante/hijo,
     // devolvemos la estructura con su Padre y todas sus variantes hermanas
     if (equipo.padreId && equipo.padre) {
@@ -194,10 +212,17 @@ export class EquiposService {
       ];
     }
 
-    return this.prisma.equipo.findMany({
+    const equipos = await this.prisma.equipo.findMany({
       where,
-      include: { familia: true, subfamilia: true },
+      include: { familia: true, subfamilia: true, padre: { select: { imagenUrl: true } } },
       orderBy: { codigoInterno: 'asc' },
+    });
+
+    return equipos.map(eq => {
+      if ((!eq.imagenUrl || eq.imagenUrl.trim() === '') && eq.padre?.imagenUrl) {
+        eq.imagenUrl = eq.padre.imagenUrl;
+      }
+      return eq;
     });
   }
 
