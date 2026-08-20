@@ -162,6 +162,13 @@ model Equipo {
   contratoItems ContratoItem[]
   ordenesTrabajo OrdenTrabajo[]
   planesMantenimiento PlanMantenimiento[]
+
+  // Índices para optimizar velocidad de consultas (Performance)
+  @@index([padreId])
+  @@index([estado])
+  @@index([categoria])
+  @@index([tipo])
+  @@index([destacado])
 }
 
 model DocumentoEquipo {
