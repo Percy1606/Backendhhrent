@@ -25,6 +25,8 @@ const EQUIPO_SELECT = {
   imagenUrl: true,
   tipo: true,
   marca: true,
+  modelo: true,
+  unidad: true,
 } as const;
 
 const INCLUDE_ITEMS = {
