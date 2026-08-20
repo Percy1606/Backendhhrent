@@ -268,6 +268,10 @@ export class CotizacionesService {
         cantidad: i.cantidad,
         tipo: i.equipo.tipo,
         imagenUrl: i.equipo.imagenUrl,
+        codigoInterno: i.equipo.codigoInterno,
+        modelo: i.equipo.modelo,
+        marca: i.equipo.marca,
+        unidad: i.equipo.unidad,
         precio: i.precioUnitario ?? i.equipo.precio,
       })),
     };
