@@ -13,6 +13,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { CotizacionesModule } from './cotizaciones/cotizaciones.module';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { ComprobantesModule } from './comprobantes/comprobantes.module';
+import { ContratosModule } from './contratos/contratos.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { ComprobantesModule } from './comprobantes/comprobantes.module';
     CotizacionesModule,
     UsuariosModule,
     ComprobantesModule,
+    ContratosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

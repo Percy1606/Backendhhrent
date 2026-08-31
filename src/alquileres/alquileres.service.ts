@@ -360,7 +360,49 @@ export class AlquileresService {
       }
     }
 
-    await this.prisma.contratoAlquiler.update({ where: { id }, data });
+    if (dto.items && dto.items.length > 0) {
+      let subtotal = 0;
+      // Actualizar cada item o recrear
+      await this.prisma.$transaction(async (tx) => {
+        for (const item of dto.items!) {
+          const precio = item.precioUnitario != null ? Number(item.precioUnitario) : 0;
+          const cantidad = item.cantidad != null ? item.cantidad : 1;
+          const sub = precio * cantidad;
+          subtotal += sub;
+
+          await tx.contratoItem.upsert({
+            where: {
+              contratoId_equipoId: {
+                contratoId: id,
+                equipoId: item.equipoId,
+              },
+            },
+            update: {
+              cantidad,
+              precioUnitario: item.precioUnitario != null ? new Prisma.Decimal(precio) : null,
+              subtotal: new Prisma.Decimal(sub),
+            },
+            create: {
+              contratoId: id,
+              equipoId: item.equipoId,
+              cantidad,
+              precioUnitario: item.precioUnitario != null ? new Prisma.Decimal(precio) : null,
+              subtotal: new Prisma.Decimal(sub),
+            },
+          });
+        }
+
+        const igv = subtotal * IGV;
+        const total = subtotal + igv;
+        data.subtotal = new Prisma.Decimal(subtotal);
+        data.igv = new Prisma.Decimal(igv);
+        data.total = new Prisma.Decimal(total);
+
+        await tx.contratoAlquiler.update({ where: { id }, data });
+      });
+    } else {
+      await this.prisma.contratoAlquiler.update({ where: { id }, data });
+    }
 
     await this.auditoria.registrar(
       usuario,

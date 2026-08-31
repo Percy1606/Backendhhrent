@@ -27,14 +27,23 @@ export class CambiarEstadoCotizacionDto {
 }
 
 // Datos necesarios para generar el ContratoAlquiler desde una cotización aprobada
+export class ItemConvertirDto {
+  equipoId: string;
+  cantidad: number;
+  precioUnitario?: number;
+}
+
 export class ConvertirCotizacionDto {
   proyecto: string;
   sede: string;
   fechaInicio: string;
   fechaFin: string;
+  clienteDocumento?: string;
   condiciones?: string;
   observaciones?: string;
+  items?: ItemConvertirDto[];
 }
+
 
 export class ValorizarCotizacionDto {
   config: any;

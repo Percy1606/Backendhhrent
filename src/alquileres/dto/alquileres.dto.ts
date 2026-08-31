@@ -31,6 +31,7 @@ export class ActualizarContratoDto {
   fechaFin?: string;
   condiciones?: string;
   observaciones?: string;
+  items?: ItemContratoDto[];
 }
 
 export class CambiarEstadoContratoDto {

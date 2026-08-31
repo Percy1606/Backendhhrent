@@ -1,0 +1,217 @@
+[0] CONTRATO DE ARRENDAMIENTO DE INSTRUMENTOS Y EQUIPOS ELÉCTRICOS
+[1] Conste por el presente documento el Contrato de Arrendamiento de Instrumentos y Equipos Eléctricos que celebran, de una parte, [RAZÓN SOCIAL DEL ARRENDADOR], con domicilio en [DIRECCIÓN], debidamente representada por [NOMBRE DEL REPRESENTANTE], a quien en adelante se le denominará EL ARRENDADOR; y, de la otra parte, [RAZÓN SOCIAL O NOMBRE DEL ARRENDATARIO], con domicilio en [DIRECCIÓN], debidamente representada por [NOMBRE DEL REPRESENTANTE], a quien en adelante se le denominará EL ARRENDATARIO.
+[2] Ambas partes acuerdan celebrar el presente contrato bajo las siguientes condiciones:
+[3] PRIMERA: OBJETO DEL CONTRATO
+[4] Por medio del presente contrato, EL ARRENDADOR entrega en alquiler a EL ARRENDATARIO el instrumento o equipo eléctrico descrito en el Anexo N.° 01, que forma parte integrante del presente contrato.
+[5] El equipo será utilizado exclusivamente para las actividades para las cuales ha sido diseñado, tales como medición, prueba, diagnóstico, inspección o mantenimiento de instalaciones eléctricas, de acuerdo con las características y especificaciones técnicas correspondientes.
+[6] EL ARRENDATARIO se compromete a utilizar el equipo respetando sus límites de operación, capacidad y condiciones de uso.
+[7] SEGUNDA: IDENTIFICACIÓN DEL EQUIPO
+[8] El instrumento o equipo objeto del alquiler será identificado mediante su marca, modelo, número de serie, código interno, características técnicas, accesorios y estado de conservación.
+[9] Estos datos serán registrados en el Anexo N.° 01, junto con el precio del alquiler, periodo de arrendamiento, garantía, valor de reposición y demás condiciones particulares aplicables.
+[10] El Anexo podrá variar para cada operación de alquiler, dependiendo del instrumento entregado, sin necesidad de modificar el contenido general del presente contrato.
+[11] TERCERA: PLAZO DEL ARRENDAMIENTO
+[12] El periodo de alquiler será de [____ días/semanas/meses], iniciándose el [fecha] y culminando el [fecha].
+[13] Si, EL ARRENDATARIO requiere conservar el equipo por un periodo adicional, deberá solicitar la ampliación antes de la fecha de devolución. La ampliación estará sujeta a la disponibilidad del equipo y a la aceptación de EL ARRENDADOR.
+[14] La permanencia del equipo después de la fecha establecida no significará una ampliación automática del contrato.
+[15] CUARTA: PRECIO Y FORMA DE PAGO
+[16] El precio correspondiente al alquiler será de S/ [__________], de acuerdo con el periodo y equipo indicados en el Anexo N.° 01.
+[17] El pago se realizará de la siguiente manera: [Transferencia/efectivo/ depóstio u otro)
+[18] QUINTA: ENTREGA Y REVISIÓN DEL EQUIPO
+[19] EL ARRENDADOR entregará el equipo en condiciones adecuadas de funcionamiento y conservación, junto con los accesorios y documentos que correspondan.
+[20] Antes de recibir el equipo, ambas partes podrán verificar su estado físico y funcional. Cualquier observación deberá quedar registrada en el Anexo N.° 01 o en el documento de entrega correspondiente.
+[21] Una vez recibido el equipo, EL ARRENDATARIO será responsable de su conservación durante todo el periodo de alquiler.
+[22] SEXTA: CONDICIONES DE USO
+[23] EL ARRENDATARIO deberá utilizar el equipo:
+[24] De acuerdo con las instrucciones y especificaciones del fabricante.
+[25] Dentro del rango y capacidad de operación establecidos.
+[26] Para la finalidad para la cual fue diseñado.
+[27] Utilizando los accesorios adecuados.
+[28] Por personal que conozca su funcionamiento y cuente con la capacitación necesaria.
+[29] Queda prohibido utilizar el equipo de una manera que pueda ocasionar daños, alterar sus características técnicas o poner en riesgo a las personas, instalaciones o al propio instrumento.
+[30] SÉPTIMA: CUIDADO Y CUSTODIA
+[31] Desde la entrega y hasta la devolución, EL ARRENDATARIO será responsable de la adecuada custodia del equipo.
+[32] Deberá protegerlo contra:
+[33] Golpes o caídas.
+[34] Humedad o contacto con líquidos.
+[35] Polvo o suciedad excesiva.
+[36] Temperaturas extremas.
+[37] Sustancias corrosivas.
+[38] Sobrecargas o condiciones superiores a su capacidad.
+[39] Transporte inadecuado.
+[40] Manipulación por personas no autorizadas.
+[41] Cualquier otra condición que pueda afectar su funcionamiento.
+[42] Cuando el equipo sea entregado con estuche, maletín, caja u otro elemento de protección, este deberá utilizarse para su transporte y almacenamiento.
+[43] OCTAVA: MANIPULACIÓN Y REPARACIONES NO AUTORIZADAS
+[44] EL ARRENDATARIO no podrá abrir, desarmar, modificar, reparar, calibrar ni realizar intervenciones internas en el equipo sin autorización previa de EL ARRENDADOR.
+[45] Asimismo, no podrá retirar, modificar o cubrir las etiquetas, números de serie, códigos de identificación u otros elementos que permitan identificar el equipo.
+[46] Si se requiere una reparación o revisión técnica durante el periodo de alquiler, EL ARRENDATARIO deberá comunicarlo a EL ARRENDADOR antes de realizar cualquier intervención.
+[47] NOVENA: MANTENIMIENTO Y REPARACIONES
+[48] EL ARRENDATARIO será responsable de mantener el equipo limpio y en condiciones adecuadas durante el periodo de alquiler. Las reparaciones, ajustes, calibraciones o intervenciones técnicas deberán ser realizadas por EL ARRENDADOR o por un servicio técnico previamente autorizado.
+[49] Cuando el instrumento requiera calibración, EL ARRENDADOR podrá entregar el correspondiente certificado vigente, de acuerdo con las características del equipo. EL ARRENDATARIO no podrá alterar la calibración ni realizar ajustes que puedan modificar la precisión del instrumento.
+[50] Si la falla corresponde al desgaste normal producido por un uso adecuado del equipo, el costo de reparación será asumido por EL ARRENDADOR. Si la falla se produce como consecuencia de un golpe, caída, uso incorrecto, sobrecarga, humedad, manipulación no autorizada o cualquier otra causa atribuible a EL ARRENDATARIO, este asumirá el costo correspondiente.
+[51] Si el equipo requiere una nueva calibración como consecuencia de un golpe, caída, sobrecarga, intervención o uso incorrecto atribuible a EL ARRENDATARIO, este asumirá el costo de dicha calibración.
+[52] DÉCIMA: TRANSPORTE Y ALMACENAMIENTO
+[53] EL ARRENDATARIO será responsable del equipo durante su transporte y almacenamiento. El equipo deberá ser transportado utilizando los medios de protección proporcionados por EL ARRENDADOR, cuando corresponda.
+[54] Cualquier daño ocasionado durante el transporte o almacenamiento debido a una manipulación o protección inadecuada será responsabilidad de EL ARRENDATARIO.
+[55] DÉCIMA PRIMERA: DEVOLUCIÓN DEL EQUIPO
+[56] Al finalizar el periodo de alquiler, EL ARRENDATARIO deberá devolver el equipo en la fecha y lugar acordados.
+[57] La devolución deberá incluir el equipo principal y todos los accesorios, componentes y elementos que hayan sido entregados conjuntamente. El equipo deberá devolverse en las mismas condiciones en las que fue recibido, considerando únicamente el desgaste normal producido por un uso adecuado.
+[58] La devolución podrá acreditarse mediante un acta, constancia de recepción o documento firmado por ambas partes.
+[59] DÉCIMA SEGUNDA: INSPECCIÓN DEL EQUIPO AL SER DEVUELTO
+[60] Al momento de la devolución, EL ARRENDADOR podrá revisar el estado físico y funcional del equipo.
+[61] La revisión podrá incluir la comprobación de:
+[62] Funcionamiento general.
+[63] Estado físico.
+[64] Pantalla y controles.
+[65] Cables y conectores.
+[66] Baterías.
+[67] Sensores.
+[68] Accesorios.
+[69] Estuche o maletín.
+[70] Número de serie.
+[71] Calibración, cuando corresponda.
+[72] Si se detecta algún daño o faltante que no corresponda al desgaste normal, se comunicará a EL ARRENDATARIO y se determinará el costo correspondiente según las condiciones establecidas en este contrato.
+[73] DÉCIMA TERCERA: DESGASTE NORMAL
+[74] Se considera desgaste normal aquel deterioro leve producido por el uso correcto y razonable del equipo durante el periodo de alquiler, sin afectar su funcionamiento ni ocasionar daños estructurales.
+[75] El desgaste normal no generará ningún cobro adicional a EL ARRENDATARIO.
+[76] No se considerarán desgaste normal los golpes, roturas, fisuras, quemaduras, daños por líquidos, piezas faltantes, cables deteriorados por mal uso, alteraciones de calibración o cualquier daño producido por un uso inadecuado.
+[77] DÉCIMA CUARTA: PÉRDIDA, ROBO O DESTRUCCIÓN TOTAL
+[78] En caso de pérdida, robo, destrucción total o desaparición del equipo mientras se encuentre bajo responsabilidad de EL ARRENDATARIO, este deberá comunicar el hecho inmediatamente a EL ARRENDADOR.
+[79] Cuando corresponda atribuir la responsabilidad a EL ARRENDATARIO, este deberá asumir el valor de reposición establecido de S./[…….] [ describir los números en letras] para dicho equipo según lo establecido en el Anexo N.° 01.
+[80] El valor de reposición podrá variar según la marca, modelo, características y valor comercial de cada instrumento.
+[81] Si el modelo exacto ya no se encuentra disponible, podrá utilizarse como referencia el costo de adquisición de un equipo equivalente que cumpla funciones y características técnicas similares.
+[82] DÉCIMA QUINTA: DAÑO O DETERIORO DEL EQUIPO
+[83] Si al momento de la devolución se determina que el equipo presenta un daño atribuible a EL ARRENDATARIO, este deberá asumir el costo de reparación.
+[84] El costo será determinado mediante una cotización, diagnóstico técnico o presupuesto emitido por EL ARRENDADOR o por un servicio técnico especializado.
+[85] Cuando el daño pueda ser reparado, EL ARRENDATARIO asumirá el costo razonable de la reparación necesaria para devolver el equipo a las condiciones en las que fue entregado.
+[86] Si el daño hace que el equipo no pueda ser reparado o su reparación resulte técnicamente inviable, se aplicará lo establecido para daño irreparable o destrucción total.
+[87] DÉCIMA SEXTA: DEVOLUCIÓN FUERA DEL PLAZO
+[88] Si EL ARRENDATARIO no devuelve el equipo en la fecha acordada, deberá pagar una penalidad de S/ [__________] por cada día de retraso, además del precio correspondiente al periodo adicional de alquiler, cuando corresponda.
+[89] DÉCIMA SÉPTIMA: ACCESORIOS FALTANTES O DAÑADOS
+[90] Los accesorios entregados junto con el equipo forman parte del alquiler y deberán ser devueltos en las mismas condiciones en las que fueron entregados.
+[91] Si al momento de la devolución se determina que un accesorio se encuentra perdido, roto o inutilizable por una causa atribuible a EL ARRENDATARIO, este asumirá el costo de reparación o reposición correspondiente.
+[92] Los accesorios y sus valores serán detallados individualmente en el Anexo N.° 01 según corresponda.
+[93] DÉCIMA OCTAVA: PROHIBICIÓN DE PRESTAR O SUBARRENDAR
+[94] EL ARRENDATARIO no podrá prestar, ceder, transferir o subarrendar el equipo a otra persona o empresa sin autorización previa de EL ARRENDADOR.
+[95] El equipo deberá permanecer bajo responsabilidad de EL ARRENDATARIO durante todo el periodo establecido en el contrato.
+[96] DÉCIMA NOVENA: RESPONSABILIDAD POR USO INDEBIDO
+[97] EL ARRENDATARIO será responsable de los daños ocasionados al equipo cuando estos sean consecuencia de un uso contrario a las instrucciones del fabricante, las condiciones establecidas en este contrato o las indicaciones proporcionadas por EL ARRENDADOR.
+[98] El arrendamiento del equipo no implica autorización para realizar trabajos eléctricos para los cuales EL ARRENDATARIO no cuente con personal capacitado, procedimientos de seguridad, equipos de protección o las autorizaciones que correspondan.
+[99] Cada parte asumirá las responsabilidades que legalmente le correspondan por sus propios actos.
+[100] VIGÉSIMA: COMUNICACIÓN DE FALLAS, ACCIDENTES O DAÑOS
+[101] EL ARRENDATARIO deberá comunicar a EL ARRENDADOR, tan pronto como sea posible, cualquier situación que pueda afectar el equipo, incluyendo:
+[102] Fallas de funcionamiento.
+[103] Golpes.
+[104] Caídas.
+[105] Daños.
+[106] Contacto con líquidos.
+[107] Sobrecargas.
+[108] Pérdida.
+[109] Robo.
+[110] Daño de accesorios.
+[111] Cualquier otra incidencia relevante.
+[112] Una vez comunicada la incidencia, EL ARRENDADOR indicará las medidas que deberán adoptarse para evitar un daño mayor.
+[113] VIGÉSIMA PRIMERA: TERMINACIÓN ANTICIPADA
+[114] El contrato podrá terminar antes de la fecha acordada cuando exista incumplimiento de las obligaciones establecidas, falta de pago, uso indebido del equipo, entrega no autorizada a terceros, pérdida del equipo o cualquier otra situación que afecte gravemente el cumplimiento del contrato.
+[115] En caso de terminación anticipada, EL ARRENDATARIO deberá devolver inmediatamente el equipo y cumplir con las obligaciones económicas que se encuentren pendientes sin opción de descuento alguno por la misma.
+[116] VIGÉSIMA SEGUNDA: CONDICIONES PARTICULARES Y MODIFICACIONES
+[117] Las condiciones particulares de cada alquiler, incluyendo el equipo, modelo, número de serie, periodo, precio, garantía, accesorios, valor de reposición y penalidades, podrán modificarse mediante el Anexo N.° 01, cotización, orden de servicio u otro documento aceptado por ambas partes.
+[118] Las condiciones particulares podrán variar para cada equipo sin modificar las demás disposiciones generales del presente contrato.
+[119] Cualquier modificación de las cláusulas generales deberá realizarse por escrito y contar con la aceptación de ambas partes.
+[120] VIGÉSIMA TERCERA: LEGISLACIÓN APLICABLE Y SOLUCIÓN DE CONTROVERSIAS
+[121] El presente contrato se regirá por las leyes de la República del Perú.
+[122] Cualquier diferencia relacionada con la interpretación o cumplimiento del contrato será tratada inicialmente mediante comunicación directa entre las partes, procurando alcanzar una solución de común acuerdo.
+[123] De no alcanzarse un acuerdo, las partes podrán recurrir a [conciliación / arbitraje / órganos jurisdiccionales competentes], de acuerdo con la legislación aplicable.
+[124] VIGÉSIMA CUARTA: CONFORMIDAD
+[125] Las partes declaran que han leído el presente contrato, comprenden las condiciones establecidas y manifiestan su conformidad con las obligaciones asumidas.
+[126] En señal de aceptación, suscriben el presente documento en la ciudad de [ciudad], el día [] del mes de [] del [20..], en dos ejemplares de igual valor.
+[129] EL ARRENDADOR
+[130] Razón social:
+[131] RUC:
+[132] Representante:
+[133] DNI/CE:
+[134] Cargo:
+[136] Firma: ______________________________
+[137] Fecha: ____ / ____ / ______
+[138] EL ARRENDATARIO
+[139] Razón social / Nombre:
+[140] RUC/DNI:
+[141] Representante:
+[142] DNI/CE:
+[143] Cargo:
+[145] Firma: ______________________________
+[146] Fecha: ____ / ____ / ______
+[149] ANEXO N.° 01 – FICHA DEL EQUIPO ARRENDADO
+[150] Este anexo deberá completarse para cada instrumento o equipo que sea entregado en alquiler.
+[151] DATOS DEL EQUIPO(S)
+[152] N°
+[153] CÓDIGO
+[154] MODELO
+[155] MARCA
+[156] CANT.
+[157] UN.
+[158] PREC. UNI.
+[159] PREC. TOTAL
+[185] Estado al momento de la entrega: [________________________________]
+[186] Fecha de última calibración: [____ / ____ / ______]
+[187] Vigencia de calibración: [____ / ____ / ______]
+[188] CONDICIONES DEL ALQUILER
+[189] Fecha de entrega: [____ / ____ / ______]
+[190] Fecha de devolución: [____ / ____ / ______]
+[191] Precio del alquiler: S/ [________________]
+[192] Penalidad por devolución tardía: S/ [________________] por día
+[193] Valor de reposición del equipo: S/ [________________]
+[194] ACCESORIOS ENTREGADOS
+[195] N°
+[196] CÓDIGO
+[197] MODELO
+[198] MARCA
+[199] CANT.
+[200] UN.
+[201] PREC. UNI.
+[202] PREC. TOTAL
+[228] OBSERVACIONES DEL ESTADO DE ENTREGA
+[229] Estado físico:
+[230] ……………………………………………………………………………………………………………………………………………………………………………………………
+[231] Estado de funcionamiento:
+[232] ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+[233] Observaciones adicionales:
+[234] ………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
+[235] DOCUMENTACIÓN ENTREGADA
+[237] Manual de operación: [Sí / No]
+[238] Certificado de calibración: [Sí / No]
+[239] Ficha técnica: [Sí / No]
+[240] Certificado de prueba: [Sí / No]
+[241] Estuche/maletín: [Sí / No]
+[243] Otros: ………………………………………………………………………………………………………………
+[244] CONFORMIDAD DE ENTREGA
+[245] EL ARRENDATARIO declara recibir el equipo y los accesorios indicados en este anexo, verificando las condiciones descritas al momento de la entrega.
+[246] EL ARRENDADOR
+[247] Nombre: ______________________________
+[248] Firma: ______________________________
+[249] Fecha: ____ / ____ / ______
+[250] EL ARRENDATARIO
+[251] Nombre: ______________________________
+[252] Firma: ______________________________
+[253] Fecha: ____ / ____ / ______
+[254] REGISTRO DE DEVOLUCIÓN
+[255] Fecha de devolución: ____ / ____ / ______
+[256] Estado del equipo: ……………………………………………………………………
+[257] ¿Presenta daños?: [Sí / No]
+[258] Descripción del daño, si corresponde:
+[259] ……………………………………………………………………………………………………………………………………………………………………………………………
+[260] ¿Faltan accesorios?: [Sí / No]
+[261] Descripción de faltantes:
+[262] …………………………………………………………………………………………………………………………………………………………………………………………..
+[263] Costo de reparación/reposición, si corresponde: S/ [________________]
+[264] Observaciones:
+[265] …………………………………………………………………………………………………………………………………………………………………………………………….
+[266] Conformidad de devolución:
+[267] Conforme: [Sí / No]
+[268] Pendiente de evaluación: …………………………………………………………
+[269] Firma de EL ARRENDADOR:
+[270] ______________________________
+[271] Fecha: ____ / ____ / ______
+[272] Firma de EL ARRENDATARIO:
+[273] ______________________________
+[274] Fecha: ____ / ____ / ______

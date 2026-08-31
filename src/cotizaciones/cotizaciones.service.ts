@@ -277,18 +277,25 @@ export class CotizacionesService {
     };
   }
 
-  async valorizar(id: string, dto: { config: any, precios: Record<string, number> }) {
+  async valorizar(id: string, dto: { config: any, precios: Record<string, number>, cantidades?: Record<string, number> }) {
     let subtotal = 0;
     
-    // Guardar precios unitarios
+    // Guardar precios unitarios y cantidades
     for (const [itemId, precio] of Object.entries(dto.precios)) {
       const item = await this.prisma.cotizacionItem.findUnique({ where: { id: itemId } });
       if (item && item.cotizacionId === id) {
+        const nuevaCantidad = dto.cantidades && dto.cantidades[itemId] !== undefined 
+          ? Math.max(1, Number(dto.cantidades[itemId]) || 1) 
+          : item.cantidad;
+
         await this.prisma.cotizacionItem.update({
           where: { id: itemId },
-          data: { precioUnitario: new Prisma.Decimal(precio) }
+          data: { 
+            precioUnitario: new Prisma.Decimal(precio),
+            cantidad: nuevaCantidad,
+          }
         });
-        subtotal += precio * item.cantidad;
+        subtotal += precio * nuevaCantidad;
       }
     }
 
@@ -408,12 +415,32 @@ export class CotizacionesService {
       throw new BadRequestException('La sede es obligatoria');
     }
 
+    const itemsAConvertir =
+      dto.items && dto.items.length > 0
+        ? dto.items.map((i) => ({
+            equipoId: i.equipoId,
+            cantidad: i.cantidad,
+            precioUnitario:
+              i.precioUnitario != null ? Number(i.precioUnitario) : undefined,
+          }))
+        : cotizacion.items.map((i) => ({
+            equipoId: i.equipoId,
+            cantidad: i.cantidad,
+            precioUnitario:
+              i.precioUnitario != null
+                ? Number(i.precioUnitario)
+                : i.equipo.precio != null
+                  ? Number(i.equipo.precio)
+                  : undefined,
+          }));
+
     // Reutiliza la creación de contratos: numeración HTR-ALQ-XXX,
     // cálculo de IGV y auditoría de CREAR_CONTRATO
     const contrato = await this.alquileres.create(
       {
         clienteNombre: cotizacion.clienteNombre,
         clienteEmpresa: cotizacion.clienteEmpresa || undefined,
+        clienteDocumento: dto.clienteDocumento?.trim() || undefined,
         clienteEmail: cotizacion.clienteEmail,
         clienteTelefono: cotizacion.clienteTelefono,
         proyecto,
@@ -422,12 +449,7 @@ export class CotizacionesService {
         fechaFin: dto.fechaFin,
         condiciones: dto.condiciones || undefined,
         observaciones: dto.observaciones || undefined,
-        items: cotizacion.items.map((i) => ({
-          equipoId: i.equipoId,
-          cantidad: i.cantidad,
-          precioUnitario:
-            i.equipo.precio != null ? Number(i.equipo.precio) : undefined,
-        })),
+        items: itemsAConvertir,
       },
       usuario,
     );
