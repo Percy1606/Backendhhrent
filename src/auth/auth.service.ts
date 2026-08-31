@@ -39,8 +39,12 @@ export class AuthService {
       rol: usuario.rol,
     };
 
-    const secret = process.env.JWT_SECRET || 'hhtrent_secret_dev_2026';
-    const token = await this.jwt.signAsync(payload, { secret });
+    const secret = process.env.JWT_SECRET;
+    if (!secret) {
+      throw new Error('JWT_SECRET no está configurado en las variables de entorno');
+    }
+    const expiresIn = (process.env.JWT_EXPIRES_IN || '8h') as any;
+    const token = await this.jwt.signAsync(payload, { secret, expiresIn });
 
     return {
       token,
@@ -88,13 +92,18 @@ export class AuthService {
     // TODO (producción): enviar enlaceReset por correo (SMTP / servicio de email)
     console.log(`[RESET PASSWORD] ${usuario.email} → ${enlaceReset}`);
 
-    return {
+    const response: { ok: boolean; mensaje: string; enlaceDesarrollo?: string } = {
       ok: true,
       mensaje:
         'Si el correo está registrado, recibirás un enlace para restablecer tu contraseña.',
-      // Solo en desarrollo se expone el enlace para poder probar el flujo
-      enlaceDesarrollo: enlaceReset,
     };
+
+    // Solo en desarrollo se expone el enlace — NUNCA en producción
+    if (process.env.NODE_ENV !== 'production') {
+      response.enlaceDesarrollo = enlaceReset;
+    }
+
+    return response;
   }
 
   async restablecerPassword(dto: RestablecerPasswordDto) {

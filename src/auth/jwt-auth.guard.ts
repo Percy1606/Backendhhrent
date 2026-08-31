@@ -33,8 +33,10 @@ export class JwtAuthGuard implements CanActivate {
     }
 
     try {
-      const secret =
-        this.config.get<string>('JWT_SECRET') || 'hhtrent_secret_dev_2026';
+      const secret = this.config.get<string>('JWT_SECRET');
+      if (!secret) {
+        throw new UnauthorizedException('Configuración de autenticación inválida');
+      }
       const payload = await this.jwt.verifyAsync<UsuarioAuth>(token, {
         secret,
       });

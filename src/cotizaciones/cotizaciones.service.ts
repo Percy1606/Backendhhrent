@@ -177,28 +177,33 @@ export class CotizacionesService {
 
   // ---- PÚBLICO: Rastreo de ticket para /seguimiento ----
   async track(ticket: string) {
-    const clean = ticket.trim().replace(/^TCK-/i, '');
+    const rawTicket = ticket?.trim() || '';
+    if (rawTicket.length < 4) {
+      throw new NotFoundException('Código de seguimiento inválido');
+    }
+
+    const clean = rawTicket.replace(/^TCK-/i, '');
     let cotizacion = await this.prisma.cotizacion.findFirst({
       where: {
         OR: [
           { id: { startsWith: clean.toLowerCase() } },
           { id: { startsWith: clean } },
-          { id: ticket.trim() },
+          { id: rawTicket },
         ],
       },
       include: INCLUDE_ITEMS,
     });
 
-    if (!cotizacion) {
-      // Buscar por coincidencia parcial si es un UUID o RUC de empresa
+    if (!cotizacion && rawTicket.length >= 6) {
+      // Buscar por coincidencia sólo si el término tiene al menos 6 caracteres (ej. nombre completo o empresa)
       cotizacion = await this.prisma.cotizacion.findFirst({
         where: {
           OR: [
-            { clienteEmpresa: { contains: ticket.trim() } },
-            { clienteNombre: { contains: ticket.trim() } },
+            { clienteEmpresa: { contains: rawTicket } },
+            { clienteNombre: { contains: rawTicket } },
           ],
         },
-        include: INCLUDE_ITEMS,
+        include: { ...INCLUDE_ITEMS, contrato: true },
         orderBy: { createdAt: 'desc' },
       });
     }
