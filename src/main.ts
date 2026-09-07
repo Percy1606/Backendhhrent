@@ -8,12 +8,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  // Validación global: rechaza campos no declarados en DTOs, transforma tipos automáticamente
+  // Validación global: transforma tipos automáticamente
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true,           // Elimina campos no declarados en el DTO
-      forbidNonWhitelisted: true, // Lanza error si llegan campos extra
-      transform: true,           // Transforma tipos (ej. string '1' → number 1)
+      transform: true,
     }),
   );
 
